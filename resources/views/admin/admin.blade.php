@@ -1,4 +1,19 @@
-<div>
-    <!-- Simplicity is the consequence of refined emotions. - Jean D'Alembert -->
-    <h1>Hii admin</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Welcome to the Admin Panel</h1>
+    <h1>Hii, {{ $name }}</h1>
+    <?php echo "Hii, " . $name ?>
+    <h1>Random - {{ rand() }}</h1>
+    {{-- <h1>{{ $users[0] }}</h1> --}}
+    @foreach ($users as $user)
+        <p>{{ $user }}</p>
+    @endforeach
+</body>
+</html>

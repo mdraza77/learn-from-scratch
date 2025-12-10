@@ -20,8 +20,10 @@ class UserController extends Controller
 
     public function showAdmin()
     {
+        $name = "Md Raza";
+        $users = ["Md Raza", "Ayush", "Aman", "John Doe"];
         if (View::exists('admin.admin')) {
-            return view('admin.admin');
+            return view('admin.admin', compact('name', 'users'));
         } else {
             return "Admin view does not exist.";
         }
