@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <h1>Hii, {{ $name }}</h1>
+    @includeIf('common.header')
+    <h1>Home Page</h1>
 </body>
 
 </html>

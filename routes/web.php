@@ -7,14 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/home/{name}', function ($name) {
-//     echo $name;
-//     return view('home', ['name' => $name]);
-// });
-Route::get('/home', [UserController::class, 'getUser']);
-Route::get('/home/{name}', [UserController::class, 'getUserName']);
-Route::get('/admin', [UserController::class, 'showAdmin']);
-
-// Route::redirect('/home', '/');
-
-// Route::view('/admin', 'admin.admin');
+Route::get('/home', [UserController::class, 'homePage']);
+Route::get('/about', [UserController::class, 'aboutPage']);
