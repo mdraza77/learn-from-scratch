@@ -13,7 +13,8 @@ Route::get('/', function () {
 // });
 Route::get('/home', [UserController::class, 'getUser']);
 Route::get('/home/{name}', [UserController::class, 'getUserName']);
+Route::get('/admin', [UserController::class, 'showAdmin']);
 
 // Route::redirect('/home', '/');
 
-Route::view('/about', 'welcome');
+// Route::view('/admin', 'admin.admin');
