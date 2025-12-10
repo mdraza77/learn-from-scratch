@@ -9,5 +9,15 @@
 <body>
     @includeIf('common.header')
     <h1>About Page</h1>
+    <x-message-banner msg="About Page" class="error" />
+    <style>
+        .success {
+            color: green;
+        }
+        .error {
+            font-weight: bold;
+            font-size: 20px;
+            color: red;
+        }
 </body>
 </html>

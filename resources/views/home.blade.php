@@ -12,5 +12,12 @@
     @includeIf('common.header')
     <h1>Home Page</h1>
 </body>
+<x-message-banner msg="Login Success" class="success" />
+<x-message-banner msg="Registration Success" class="success" />
+<style>
+    .success {
+        color: green;
+    }
+</style>
 
 </html>
