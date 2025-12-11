@@ -9,3 +9,6 @@ Route::get('/', function () {
 
 Route::get('/user-form', [UserController::class, 'addUser'])->name('user.form');
 Route::post('/user-form', [UserController::class, 'storeUser'])->name('user.store');
+
+Route::view('/home', 'home');
+Route::view('/about', 'about');
