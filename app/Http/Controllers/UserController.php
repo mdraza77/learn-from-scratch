@@ -16,12 +16,19 @@ class UserController extends Controller
 
     public function storeUser(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         Log::info($request->all());
         $validated = $request->validate([
-            'name' => 'required|string',
+            'firstName' => 'required|string',
+            'lastName' => 'required|string',
+            'userName' => 'required|string',
+            'city' => 'required|string',
+            'zip' => 'required|string',
             'email' => 'required|string|unique:users',
             'password' => 'required|string',
+            'gender' => 'required|in:male,female',
+            'skills' => 'required|string',
+            'skillsRange' => 'required|numeric',
         ]);
         Log::info('Data Validation passed');
         // $validated['password'] = 123123123;
