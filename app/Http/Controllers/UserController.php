@@ -22,12 +22,12 @@ class UserController extends Controller
             'firstName' => 'required|string',
             'lastName' => 'required|string',
             'userName' => 'required|string',
-            'city' => 'required|string',
-            'zip' => 'required|string',
+            'state' => 'required|string',
+            'zip' => 'required|numeric',
             'email' => 'required|string|unique:users',
             'password' => 'required|string',
             'gender' => 'required|in:male,female',
-            'skills' => 'required|string',
+            'skills' => 'required',
             'skillsRange' => 'required|numeric',
         ]);
         Log::info('Data Validation passed');
