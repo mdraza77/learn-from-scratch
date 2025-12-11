@@ -10,10 +10,13 @@
 
 <body>
     @includeIf('common.header')
-    <h1>Home Page</h1>
+    <h1 class="text-center">Home Page Form</h1>
 </body>
-<x-message-banner msg="Login Success" class="success" />
-<x-message-banner msg="Registration Success" class="success" />
+{{-- <x-message-banner msg="Login Success" class="success" />
+<x-message-banner msg="Registration Success" class="success" /> --}}
+<div class="container">
+    <x-inputs />
+</div>
 <style>
     .success {
         color: green;
