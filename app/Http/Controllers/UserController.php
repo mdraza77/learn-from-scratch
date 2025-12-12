@@ -45,6 +45,8 @@ class UserController extends Controller
     //     return redirect()->route('user.form')->with('success', 'Inserted Successfully');
     // }
     function users() {
-        return DB::select('select * from users');
+        // return DB::select('select * from users');
+        $users = User::all();
+        return view('users', compact('users'));
     }
 }
