@@ -10,4 +10,10 @@ class HomeController extends Controller
         $arr = [1, 2, 3, 4, 5, 6,];
         return view('home', compact('arr'));
     }
+    public function showStudent() {
+        return "Show Student";
+    }
+    public function addStudent() {
+        return "Add Student";
+    }
 }

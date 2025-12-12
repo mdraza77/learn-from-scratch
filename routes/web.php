@@ -13,4 +13,8 @@ Route::post('/user-form', [UserController::class, 'storeUser'])->name('user.stor
 
 Route::view('/home', 'home');
 Route::view('/about', 'about')->name('about');
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::prefix('student')->group(function () {
+    Route::get('/show', [HomeController::class, 'showStudent'])->name('home');
+    Route::get('/add', [HomeController::class, 'addStudent'])->name('home');
+});
