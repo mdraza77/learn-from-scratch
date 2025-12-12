@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\CountryCheck;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +30,5 @@ Route::prefix('students')->controller(StudentController::class)->group(function 
     Route::get('/about/{name}', 'about');
 });
 
-Route::middleware('check1')->group(function () {
-    Route::view('home', 'home');
-});
+Route::view('home', 'home')->middleware([AgeCheck::class]);
+Route::view('about', 'about')->middleware([CountryCheck::class]);

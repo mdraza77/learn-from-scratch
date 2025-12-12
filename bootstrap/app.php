@@ -13,10 +13,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->appendToGroup('check1', [
-            AgeCheck::class,
-            CountryCheck::class,
-        ]);
+        // $middleware->appendToGroup('check1', [
+        //     AgeCheck::class,
+        //     CountryCheck::class,
+        // ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
