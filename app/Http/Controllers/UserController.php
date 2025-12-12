@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -14,33 +15,36 @@ class UserController extends Controller
         return view('user-form');
     }
 
-    public function storeUser(Request $request)
-    {
-        // dd($request->all());
-        Log::info($request->all());
-        $validated = $request->validate(
-            [
-                'firstName' => 'required|string',
-                'lastName' => 'required|string',
-                'userName' => 'required|string',
-                'state' => 'required|string|uppercase',
-                'zip' => 'required|numeric',
-                'email' => 'required|string|unique:users',
-                'password' => 'required|string',
-                'gender' => 'required|in:male,female',
-                'skills' => 'required',
-                'skillsRange' => 'required|numeric',
-            ],
-            [
-                'state.uppercase' => 'City should be in UPPERCASE.'
-            ]
-        );
-        Log::info('Data Validation passed');
-        // $validated['password'] = 123123123;
-        User::Create($validated);
+    // public function storeUser(Request $request)
+    // {
+    //     // dd($request->all());
+    //     Log::info($request->all());
+    //     $validated = $request->validate(
+    //         [
+    //             'firstName' => 'required|string',
+    //             'lastName' => 'required|string',
+    //             'userName' => 'required|string',
+    //             'state' => 'required|string|uppercase',
+    //             'zip' => 'required|numeric',
+    //             'email' => 'required|string|unique:users',
+    //             'password' => 'required|string',
+    //             'gender' => 'required|in:male,female',
+    //             'skills' => 'required',
+    //             'skillsRange' => 'required|numeric',
+    //         ],
+    //         [
+    //             'state.uppercase' => 'City should be in UPPERCASE.'
+    //         ]
+    //     );
+    //     Log::info('Data Validation passed');
+    //     // $validated['password'] = 123123123;
+    //     User::Create($validated);
 
-        Log::info('Data Inserted');
+    //     Log::info('Data Inserted');
 
-        return redirect()->route('user.form')->with('success', 'Inserted Successfully');
+    //     return redirect()->route('user.form')->with('success', 'Inserted Successfully');
+    // }
+    function users() {
+        return DB::select('select * from users');
     }
 }
