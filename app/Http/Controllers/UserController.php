@@ -53,4 +53,15 @@ class UserController extends Controller
         return view('users', compact('users'));
         // return $response;
     }
+
+    public function queries()
+    {
+        $users = DB::table('users')->get();
+        // $users = DB::table('users')->insert([
+        //     'name' => 'Md Razas',
+        //     'email' => 'dsraza.com',
+        //     'password' => 'mraza.coms',
+        // ]);
+        return view('users', compact('users'));
+    }
 }
