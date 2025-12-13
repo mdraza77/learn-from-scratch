@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Users</title>
-    <style>
+    {{-- <style>
         body {
             font-family: Arial, sans-serif;
             background: #f4f6f9;
@@ -45,11 +45,11 @@
             font-size: 14px;
             color: #333;
         }
-    </style>
+    </style> --}}
 </head>
 
 <body>
-    <table>
+    {{-- <table>
         <tr>
             <th>Name</th>
             <th>Email</th>
@@ -62,7 +62,19 @@
                 <td>{{ Carbon\Carbon::parse($user->created_at)->format('d M, Y H:i A') }}</td>
             </tr>
         @endforeach
-    </table>
+    </table> --}}
+
+    <form action="/users" method="post">
+        @csrf
+        {{-- <input type="hidden" name="_method" value="PUT"> --}}
+        {{-- Or --}}
+        {{-- @method('PUT') --}}
+        @method('DELETE')
+        <input type="name" name="name" placeholder="Name"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <button>Submit</button>
+    </form>
 </body>
 
 </html>
