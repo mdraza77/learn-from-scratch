@@ -11,4 +11,3 @@ Route::get('/', function () {
 
 Route::get('/users', [UserController::class, 'index']);
 Route::get('/student', [StudentController::class, 'index']);
-Route::get('/users', [UserController::class, 'queries']);
