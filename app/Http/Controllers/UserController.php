@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class UserController extends Controller
 {
@@ -44,9 +45,12 @@ class UserController extends Controller
 
     //     return redirect()->route('user.form')->with('success', 'Inserted Successfully');
     // }
-    function users() {
+    function index()
+    {
         // return DB::select('select * from users');
+        // $response = Http::get('https://jsonplaceholder.typicode.com/users/1');
         $users = User::all();
         return view('users', compact('users'));
+        // return $response;
     }
 }
