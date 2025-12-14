@@ -33,4 +33,12 @@ class UserController extends Controller
     {
         return "Delete Method called";
     }
+    function any()
+    {
+        return "Any Method called";
+    }
+    function group1()
+    {
+        return "Group1 Method called";
+    }
 }

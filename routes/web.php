@@ -15,4 +15,6 @@ Route::post('/users', [UserController::class, 'post']);
 Route::put('/users', [UserController::class, 'put']);
 Route::delete('/users', [UserController::class, 'delete']);
 Route::view('/form', 'users');
+// Route::any('/users', [UserController::class, 'any']);
+Route::match(['get', 'post'], '/users', [UserController::class, 'group1']);
 Route::get('/student', [StudentController::class, 'index']);
