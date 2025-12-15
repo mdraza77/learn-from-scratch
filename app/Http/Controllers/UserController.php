@@ -41,4 +41,29 @@ class UserController extends Controller
     {
         return "Group1 Method called";
     }
+
+    public function login(Request $request) {
+        echo "Request Method is " . $request->method();
+        echo "<br>";
+        echo "Request URL is " . $request->url();
+        echo "<br>";
+        echo "Request Path is " . $request->path();
+        echo "<br>";
+        echo "Request Name is " . $request->input('name');
+        echo "<br>";
+        echo "Request Password is " . $request->input('password');
+        echo "<br>";
+        print_r($request->input());
+        echo "<br>";
+        print_r($request->collect());
+        echo "<br>";
+        if ($request->isMethod('post')) {
+            echo "Execute for post";
+        } else {
+            echo "Dont Execute";
+        }
+        echo "<br>";
+        echo "IP is " . $request->ip();
+        // return $request->all();
+    }
 }

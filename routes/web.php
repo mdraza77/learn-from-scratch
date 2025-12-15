@@ -18,3 +18,6 @@ Route::view('/form', 'users');
 // Route::any('/users', [UserController::class, 'any']);
 Route::match(['get', 'post'], '/users', [UserController::class, 'group1']);
 Route::get('/student', [StudentController::class, 'index']);
+
+Route::post('forms', [UserController::class, 'login']);
+Route::view('forms', 'user');
