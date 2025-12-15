@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
@@ -27,3 +28,6 @@ Route::view('login', 'login');
 Route::view('profile', 'profile');
 Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout']);
+
+Route::view('client', 'client');
+Route::post('client', [ClientController::class, 'add']);
