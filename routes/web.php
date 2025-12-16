@@ -43,6 +43,9 @@ Route::get('about/{lang}', function ($lang) {
 });
 
 
-Route::get('/students', [StudentController::class, 'add_students'])->name('students.createForm');
+Route::get('/students/create', [StudentController::class, 'add_students'])->name('students.createForm');
 Route::post('/students', [StudentController::class, 'store_students'])->name('students.create');
-Route::get('/students', [StudentController::class, 'list_students']);
+Route::get('/students', [StudentController::class, 'list_students'])->name('students.list');
+Route::post('/students/{id}', [StudentController::class, 'delete_students'])->name('students.delete');
+Route::get('/students/{id}/edit', [StudentController::class, 'edit_students'])->name('students.edit');
+Route::put('/students/{id}', [StudentController::class, 'update_students'])->name('students.update');
