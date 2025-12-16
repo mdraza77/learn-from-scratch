@@ -41,3 +41,8 @@ Route::get('about/{lang}', function ($lang) {
     App::setLocale($lang);
     return view('about',);
 });
+
+
+Route::get('/students', [StudentController::class, 'add_students'])->name('students.createForm');
+Route::post('/students', [StudentController::class, 'store_students'])->name('students.create');
+Route::get('/students', [StudentController::class, 'list_students']);

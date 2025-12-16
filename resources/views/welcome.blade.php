@@ -11,5 +11,6 @@
     <h2>{{ __('welcome.sub-heading') }}</h2>
     <h1>Hello, How are you?</h1>
     <a href="about">{{ __('welcome.about') }}</a>
+    <h1>{{ __('welcome.aboutName', ['name' => 'Raza']) }}</h1>
 </body>
 </html>
