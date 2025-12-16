@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Http;
@@ -31,3 +32,6 @@ Route::get('logout', [LoginController::class, 'logout']);
 
 Route::view('client', 'client');
 Route::post('client', [ClientController::class, 'add']);
+
+Route::get('/upload', [UploadController::class, 'showUploadForm']);
+Route::post('/upload', [UploadController::class, 'uploadFile']);

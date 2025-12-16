@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dsiplay File</title>
+    <style></style>
+</head>
+
+<body>
+    <div>
+        <img width="300" height="300" src="{{ url('storage/uploads/' . $fileName) }}" alt="">
+    </div>
+</body>
+
+</html>
