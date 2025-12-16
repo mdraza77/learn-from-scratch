@@ -6,6 +6,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 
 Route::get('/', function () {
@@ -35,3 +36,8 @@ Route::post('client', [ClientController::class, 'add']);
 
 Route::get('/upload', [UploadController::class, 'showUploadForm']);
 Route::post('/upload', [UploadController::class, 'uploadFile']);
+
+Route::get('about/{lang}', function ($lang) {
+    App::setLocale($lang);
+    return view('about',);
+});
