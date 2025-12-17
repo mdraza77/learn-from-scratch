@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
@@ -52,3 +53,7 @@ Route::put('/students/{id}', [StudentController::class, 'update_students'])->nam
 
 Route::get('/search', [StudentController::class, 'search'])->name('students.search');
 Route::post('delete-multiple', [StudentController::class, 'deleteMultiple'])->name('students.deleteMultiple');
+
+Route::get('/image', [ImageController::class, 'add_image'])->name('image.add');
+Route::get('/image/list', [ImageController::class, 'show_image_list'])->name('image.list');
+Route::post('/image', [ImageController::class, 'store_image'])->name('image.store');
