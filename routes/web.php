@@ -57,3 +57,6 @@ Route::post('delete-multiple', [StudentController::class, 'deleteMultiple'])->na
 Route::get('/image', [ImageController::class, 'add_image'])->name('image.add');
 Route::get('/image/list', [ImageController::class, 'show_image_list'])->name('image.list');
 Route::post('/image', [ImageController::class, 'store_image'])->name('image.store');
+
+Route::view('/about-page', 'about-page');
+Route::view('/home-page', 'home-page');
