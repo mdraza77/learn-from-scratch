@@ -17,7 +17,7 @@ class StudentController extends Controller
 
     public function list_students()
     {
-        $students = Student::all();
+        $students = Student::paginate(1);
         return view('list-student', compact('students'));
     }
     public function add_students()

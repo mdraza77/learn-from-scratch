@@ -36,6 +36,10 @@
             background: none;
             border: none;
         }
+
+        .w-5 {
+            width: 20px;
+        }
     </style>
 </head>
 
@@ -74,6 +78,9 @@
             </tr>
         @endforeach
     </table>
+    <div>
+        {{ $students->links() }}
+    </div>
 </body>
 
 </html>
