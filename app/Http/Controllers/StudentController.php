@@ -17,7 +17,7 @@ class StudentController extends Controller
 
     public function list_students()
     {
-        $students = Student::paginate(1);
+        $students = Student::paginate(10);
         return view('list-student', compact('students'));
     }
     public function add_students()
@@ -62,9 +62,20 @@ class StudentController extends Controller
         return redirect()->route('students.list')->with('success', 'Updated Successfully');
     }
 
-    public function search(Request $request) {
+    public function search(Request $request)
+    {
         $students = Student::where('name', 'like', "%$request->search%")->get();
         $searchValue = $request->search;
         return view('list-student', compact('students', 'searchValue'));
+    }
+
+    public function deleteMultiple(Request $request)
+    {
+        $result = Student::destroy($request->ids);
+        if ($result) {
+            return redirect()->route('students.list')->with('success', 'Multiple Deleted Successfully');
+        } else {
+            return "No Students Found";
+        }
     }
 }

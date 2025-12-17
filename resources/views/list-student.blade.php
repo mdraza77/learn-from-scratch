@@ -51,33 +51,39 @@
     <div class="btn">
         <a class="btn-link" href="{{ route('students.createForm') }}">Create</a>
     </div>
-    <table border="3">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Created At</th>
-            <th>Action</th>
-        </tr>
-        @foreach ($students as $student)
+    <form action="{{ route('students.deleteMultiple') }}" method="post">
+        @csrf
+        <button class="btn btn-link">Delete</button>
+        <table border="3">
             <tr>
-                <td>{{ $student->name }}</td>
-                <td>{{ $student->email }}</td>
-                <td>{{ Carbon\Carbon::parse($student->created_at)->format('d M Y h:i A') }}</td>
-                <td class="actions">
-                    <div class="btn">
-                        <a class="btn-link" href="{{ route('students.edit', $student->id) }}">Edit</a>
-                    </div>
-
-                    <form action="{{ route('students.delete', $student->id) }}" method="post">
-                        @csrf
-                        <div class="btn">
-                            <button class="btn-link" onclick="return confirm('Are you sure?');">Delete</button>
-                        </div>
-                    </form>
-                </td>
+                <th>Select</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Action</th>
             </tr>
-        @endforeach
-    </table>
+            @foreach ($students as $student)
+                <tr>
+                    <td><input type="checkbox" name="ids[]" value="{{ $student->id }}" id=""></td>
+                    <td>{{ $student->name }}</td>
+                    <td>{{ $student->email }}</td>
+                    <td>{{ Carbon\Carbon::parse($student->created_at)->format('d M Y h:i A') }}</td>
+                    <td class="actions">
+                        <div class="btn">
+                            <a class="btn-link" href="{{ route('students.edit', $student->id) }}">Edit</a>
+                        </div>
+
+                        <form action="{{ route('students.delete', $student->id) }}" method="post">
+                            @csrf
+                            <div class="btn">
+                                <button class="btn-link" onclick="return confirm('Are you sure?');">Delete</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+    </form>
     <div>
         {{ $students->links() }}
     </div>
