@@ -75,7 +75,7 @@ class StudentController extends Controller
         if ($result) {
             return redirect()->route('students.list')->with('success', 'Multiple Deleted Successfully');
         } else {
-            return "No Students Found";
+            return "No Students Selected";
         }
     }
 }

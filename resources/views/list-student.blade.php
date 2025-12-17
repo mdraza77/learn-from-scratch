@@ -44,6 +44,8 @@
 </head>
 
 <body>
+    <div id="heading">Heading</div>
+    <button class="btn btn-link" onclick="changeColor()">Change</button>
     <form action="{{ route('students.search') }}" method="get">
         <input type="text" value="{{ $searchValue ?? '' }}" name="search" id="" placeholder="Search...">
         <button class="btn btn-link">Search</button>
@@ -88,5 +90,13 @@
         {{ $students->links() }}
     </div>
 </body>
+
+<script>
+    function changeColor() {
+        let heading = document.getElementById('heading')
+        heading.style.color = 'red';
+        heading.style.fontSize = '20px';
+    }
+</script>
 
 </html>
