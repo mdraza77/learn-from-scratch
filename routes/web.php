@@ -66,3 +66,4 @@ Route::view('/home-page', 'home-page');
 // 18122025 002 Maintenance Mode php artisan down --secret="raza" php artisan down php artisan up
 
 Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/create', [ProductController::class, 'create']);
