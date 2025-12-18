@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Route;
@@ -63,3 +64,5 @@ Route::view('/home-page', 'home-page');
 
 
 // 18122025 002 Maintenance Mode php artisan down --secret="raza" php artisan down php artisan up
+
+Route::get('/products', [ProductController::class, 'index']);
