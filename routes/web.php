@@ -60,3 +60,6 @@ Route::post('/image', [ImageController::class, 'store_image'])->name('image.stor
 
 Route::view('/about-page', 'about-page');
 Route::view('/home-page', 'home-page');
+
+
+// 18122025 002 Maintenance Mode php artisan down --secret="raza" php artisan down php artisan up
