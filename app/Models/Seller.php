@@ -15,4 +15,8 @@ class Seller extends Model
     {
         return $this->hasMany(Product::class, 'seller_id');
     }
+    function many_to_one()
+    {
+        // return Product::all();
+    }
 }

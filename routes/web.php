@@ -71,3 +71,4 @@ Route::get('/products/create', [ProductController::class, 'create']);
 
 Route::get('/sellers', [SellerController::class, 'index']);
 Route::get('/many-sellers', [SellerController::class, 'many_sellers']);
+Route::get('/many-to-one', [SellerController::class, 'manyToOne']);
