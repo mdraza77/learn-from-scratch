@@ -12,4 +12,8 @@ class SellerController extends Controller
         // $sellers = Seller::all();
         return Seller::findOrFail(1)->products;
     }
+    public function many_sellers()
+    {
+        return Seller::findOrFail(1)->manyproducts;
+    }
 }
