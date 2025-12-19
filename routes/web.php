@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
@@ -72,3 +73,5 @@ Route::get('/products/create', [ProductController::class, 'create']);
 Route::get('/sellers', [SellerController::class, 'index']);
 Route::get('/many-sellers', [SellerController::class, 'many_sellers']);
 Route::get('/many-to-one', [SellerController::class, 'manyToOne']);
+
+Route::get('/send-mail', [EmailController::class, 'sendEmail']);
