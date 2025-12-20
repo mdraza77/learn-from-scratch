@@ -74,4 +74,5 @@ Route::get('/sellers', [SellerController::class, 'index']);
 Route::get('/many-sellers', [SellerController::class, 'many_sellers']);
 Route::get('/many-to-one', [SellerController::class, 'manyToOne']);
 
-Route::get('/send-mail', [EmailController::class, 'sendEmail']);
+Route::post('/send-mail', [EmailController::class, 'sendEmail'])->name('mail.send');
+Route::view('/send-mail', 'send-email');
