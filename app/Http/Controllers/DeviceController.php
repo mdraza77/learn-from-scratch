@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Device;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Blade;
 
 class DeviceController extends Controller
 {
@@ -20,7 +21,8 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        //
+        $price = 500;
+        return Blade::render('Price is {{ $price }}', compact('price'));
     }
 
     /**

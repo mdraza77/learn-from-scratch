@@ -80,3 +80,4 @@ Route::get('/send-mail', [EmailController::class, 'sendEmailForm']);
 Route::post('/send-mail', [EmailController::class, 'sendEmail'])->name('mail.send');
 
 Route::get('/devices/{key:name}', [DeviceController::class, 'index']);
+Route::get('/devices', [DeviceController::class, 'create']);
