@@ -13,6 +13,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use App\Http\Controllers\DeviceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -78,13 +79,4 @@ Route::get('/many-to-one', [SellerController::class, 'manyToOne']);
 Route::get('/send-mail', [EmailController::class, 'sendEmailForm']);
 Route::post('/send-mail', [EmailController::class, 'sendEmail'])->name('mail.send');
 
-$message = "hi Raza, what about you?";
-// $message = Str::ucfirst($message);
-// $message = Str::replaceFirst('Hi', 'Hello', $message);
-// $message = Str::camel($message);
-
-$message = Str::of($message)
-    ->ucfirst($message)
-    ->replaceFirst('Hi', 'Hello', $message)
-    ->camel($message);
-echo $message;
+Route::get('/devices/{key:name}', [DeviceController::class, 'index']);
