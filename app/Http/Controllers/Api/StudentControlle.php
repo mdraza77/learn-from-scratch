@@ -12,4 +12,16 @@ class StudentControlle extends Controller
     {
         return Student::all();
     }
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'batch' => 'nullable',
+        ]);
+
+        Student::Create($validated);
+
+        return "Student stored successfully";
+    }
 }

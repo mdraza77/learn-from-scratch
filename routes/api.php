@@ -13,3 +13,4 @@ Route::get('/test', function() {
 });
 
 Route::get('/students', [StudentControlle::class, 'index']);
+Route::post('/students/add', [StudentControlle::class, 'store'])->name('students.store');
