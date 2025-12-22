@@ -52,4 +52,18 @@ class StudentControlle extends Controller
             'message' => 'Student deleted successfully'
         ]);
     }
+
+    public function search($name)
+    {
+        $student = Student::where('name', 'like', "%$name%")->get();
+        if ($student->isEmpty()) {
+            return response()->json([
+                'message' => 'Student not found'
+            ], 404);
+        }
+
+        return response()->json([
+            'result' => $student
+        ]);
+    }
 }
