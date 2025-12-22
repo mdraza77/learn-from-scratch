@@ -14,3 +14,4 @@ Route::get('/test', function() {
 
 Route::get('/students', [StudentControlle::class, 'index']);
 Route::post('/students/add', [StudentControlle::class, 'store'])->name('students.store');
+Route::put('/students/{id}/edit', [StudentControlle::class, 'update'])->name('students.update');

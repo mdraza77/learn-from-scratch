@@ -24,4 +24,18 @@ class StudentControlle extends Controller
 
         return "Student stored successfully";
     }
+    public function update(Request $request, $id)
+    {
+        $student = Student::findOrFail($id);
+
+        $validated = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'batch' => 'nullable',
+        ]);
+
+        $student->update($validated);
+
+        return "Student updated successfully";
+    }
 }
