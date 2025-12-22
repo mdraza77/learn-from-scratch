@@ -17,6 +17,6 @@ Route::get('/students', [StudentControlle::class, 'index']);
 Route::post('/students/add', [StudentControlle::class, 'store'])->name('students.store');
 Route::put('/students/{id}/edit', [StudentControlle::class, 'update'])->name('students.update');
 Route::delete('/students/{id}', [StudentControlle::class, 'destroy'])->name('students.destroy');
-Route::get('/students/search/{name}', [StudentControlle::class, 'search'])->name('students.search');
+Route::get('/students/search/{name}', [StudentControlle::class, 'search']);
 
 Route::resource('resource', ResourceController::class);
