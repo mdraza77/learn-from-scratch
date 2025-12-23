@@ -20,3 +20,6 @@ Route::delete('/students/{id}', [StudentControlle::class, 'destroy'])->name('stu
 Route::get('/students/search/{name}', [StudentControlle::class, 'search']);
 
 Route::resource('resource', ResourceController::class);
+
+//Route::get('/top-students', [StudentControlle::class, 'index']);
+
