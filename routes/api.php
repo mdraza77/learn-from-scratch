@@ -23,3 +23,4 @@ Route::resource('resource', ResourceController::class);
 
 //Route::get('/top-students', [StudentControlle::class, 'index']);
 
+//Route::get('/top-students', [StudentControlle::class, 'index']);
