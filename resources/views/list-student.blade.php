@@ -33,7 +33,9 @@
             <form action="{{ route('students.search') }}" method="get">
                 <input type="text" class="" value="{{ $searchValue ?? '' }}" name="search" id=""
                     placeholder="Search...">
-                <button class="btn btn-success">Search</button>
+                <button type="button" class="btn btn-success">Search</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#studentModal">View
+                    Students</button>
             </form>
             <div class="">
                 <a class="btn btn-primary" href="{{ route('students.createForm') }}">Create</a>
@@ -76,6 +78,27 @@
                 {{ $students->links() }}
             </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="studentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Understood</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
 
     <script>
