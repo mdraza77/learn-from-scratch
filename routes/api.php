@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\StudentControlle;
 use App\Http\Controllers\ResourceController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\UserAuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -21,6 +22,5 @@ Route::get('/students/search/{name}', [StudentControlle::class, 'search']);
 
 Route::resource('resource', ResourceController::class);
 
-//Route::get('/top-students', [StudentControlle::class, 'index']);
-
-//Route::get('/top-students', [StudentControlle::class, 'index']);
+Route::post('/login', [UserAuthController::class, 'login']);
+Route::post('/register', [UserAuthController::class, 'register']);
