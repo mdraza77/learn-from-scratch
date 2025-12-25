@@ -18,8 +18,6 @@
                 gap: 5px;
             }
 
-
-
             .w-5 {
                 width: 20px;
             }
@@ -104,8 +102,8 @@
     <script>
         function changeColor() {
             let heading = document.getElementById('heading')
-            heading.style.color = 'red';
-            heading.style.fontSize = '20px';
+            heading.style.color = 'blue';
+            heading.style.fontSize = '25px';
         }
     </script>
 
