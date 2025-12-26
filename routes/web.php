@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\MobileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -81,3 +82,9 @@ Route::post('/send-mail', [EmailController::class, 'sendEmail'])->name('mail.sen
 
 Route::get('/devices/{key:name}', [DeviceController::class, 'index']);
 Route::get('/devices', [DeviceController::class, 'create']);
+
+Route::get('/mobiles', [MobileController::class, 'index'])->name('mobiles.index');
+Route::get('/mobiles/create', [MobileController::class, 'create'])->name('mobiles.create');
+Route::post('/mobiles', [MobileController::class, 'store'])->name('mobiles.store');
+Route::get('/mobiles/{id}/edit', [MobileController::class, 'edit'])->name('mobiles.edit');
+Route::post('/mobiles/{id}', [MobileController::class, 'destroy'])->name('mobiles.delete');
