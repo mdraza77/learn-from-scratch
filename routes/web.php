@@ -87,4 +87,5 @@ Route::get('/mobiles', [MobileController::class, 'index'])->name('mobiles.index'
 Route::get('/mobiles/create', [MobileController::class, 'create'])->name('mobiles.create');
 Route::post('/mobiles', [MobileController::class, 'store'])->name('mobiles.store');
 Route::get('/mobiles/{id}/edit', [MobileController::class, 'edit'])->name('mobiles.edit');
+Route::put('/mobiles/{id}', [MobileController::class, 'update'])->name('mobiles.update');
 Route::post('/mobiles/{id}', [MobileController::class, 'destroy'])->name('mobiles.delete');

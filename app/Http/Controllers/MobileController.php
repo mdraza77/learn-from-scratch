@@ -55,17 +55,30 @@ class MobileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Mobile $mobile)
+    public function edit(Mobile $mobile, $id)
     {
-        //
+        $mobile = Mobile::findOrFail($id);
+        return view('mobile.edit', compact('mobile'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mobile $mobile)
+    public function update(Request $request, Mobile $mobile, $id)
     {
-        //
+        $validated = $request->validate([
+            'brand' => 'required|string|max:255',
+            'model' => 'required|string|max:255',
+            'operating_system' => 'required|string|max:255',
+            'storage_capacity' => 'required|integer|min:0',
+            'ram' => 'required|integer|min:0',
+            'price' => 'required|numeric|min:0',
+        ]);
+
+        $mobile = Mobile::findOrFail($request->id);
+        $mobile->update($validated);
+
+        return redirect()->route('mobiles.index')->with('success', 'Mobile updated successfully.');
     }
 
     /**
